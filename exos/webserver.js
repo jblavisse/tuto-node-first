@@ -4,26 +4,11 @@ const express = require("express");
 const app = express();
 
 // Define variable for port
-const port = 4000;
+const port = 5000;
 
-let people = [
-    {name: "JB", age: 12},
-    {name: "Balthazar", age: 23}
-];
-
-// Gets request
+// Get request
 app.get('/', (req,res) => {
-    // Automatically detects type of response
-    // type: text-plain or application/html or application/json
-    res.send(people);
-})
-
-app.get('/people/:id', (req, res) => {
-    // :bachi -> URL param
-    // req.params.bachi
-    const id = req.params.id;
-    res.send(people[id-1]);
-
+    res.send('Bienvenue sur mon site');
 })
 
 app.get('/blog', (req,res) => {
